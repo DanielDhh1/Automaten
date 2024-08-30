@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Automaten
 {
-    internal class VendingMachine
+    public class VendingMachine
     {
     }
 }

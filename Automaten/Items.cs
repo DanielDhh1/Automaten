@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Automaten
 {
-    internal class Items
+    public abstract class Items
     {
+
     }
 }
