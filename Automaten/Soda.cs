@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace Automaten
 {
-    public class Soda
+    public class Soda : Items
     {
-        private string _name {  get; set; }
-        private int _price { get; set; }
-
-        public Soda(string name, int price)
+        public Soda(string name, int price) : base(name, price)
         {
-            _name = name;
-            _price = price;
         }
     }
 }

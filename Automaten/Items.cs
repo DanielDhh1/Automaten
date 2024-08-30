@@ -8,6 +8,15 @@ namespace Automaten
 {
     public abstract class Items
     {
+        public string _name;
+        public int _price;
 
+        public Items(string name, int price)
+        {
+            _name = name;
+            _price = price;
+        }
+
+        
     }
 }

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Automaten
 {
-    public abstract class Candy 
+    public class Candy : Items
     {
-        public Candy(string name, int price)
+        public Candy(string name, int price) : base(name, price)
+        {
+        }
     }
 }
