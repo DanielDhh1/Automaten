@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Automaten
 {
-    internal class Soda
+    public class Soda
     {
+        private string _name {  get; set; }
+        private int _price { get; set; }
+
+        public Soda(string name, int price)
+        {
+            _name = name;
+            _price = price;
+        }
     }
 }
