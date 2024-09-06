@@ -1,8 +1,14 @@
 [
   {
+    "Quantity": 9,
+    "Price": 9.65,
+    "Name": "Fanta",
+    "Id": 0
+  },
+  {
     "Quantity": 10,
-    "Price": 9.95,
-    "Name": "Pepsi Max",
+    "Price": 9.65,
+    "Name": "Coca-cola",
     "Id": 1
   }
 ]

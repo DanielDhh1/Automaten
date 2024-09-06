@@ -8,21 +8,25 @@ namespace Automaten
 {
     public class VendingMachineException
     {
-        public class InvalidNumberException : Exception 
+        public class InvalidNumberException : Exception
         {
-            public InvalidNumberException(string message): base(message) { }
+            public InvalidNumberException(string message) : base(message) { }
         }
-        public class OutOfStockException : Exception 
+        public class OutOfStockException : Exception
         {
-            public OutOfStockException(string message): base(message) { }
+            public OutOfStockException(string message) : base(message) { }
         }
         public class InsufficientFundsException : Exception
         {
-            public InsufficientFundsException(string message): base(message) { }
+            public InsufficientFundsException(string message) : base(message) { }
         }
         public class IdAlreadyExistsException : Exception
         {
             public IdAlreadyExistsException(string message) : base(message) { }
+        }
+        public class CantFindAnotherOneException : Exception
+        {
+            public CantFindAnotherOneException(string message) : base(message) { }
         }
     }
 }

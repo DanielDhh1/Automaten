@@ -12,7 +12,6 @@ namespace Automaten
         private string _name;
         private double _price;
         private int _quantity;
-        public Items() { }
         public Items(int id, string name, double price, int quantity)
         {
             _id = id;

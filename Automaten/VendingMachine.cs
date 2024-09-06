@@ -11,7 +11,6 @@ namespace Automaten
     public class VendingMachine
     {
         ItemsMethods itemsMethods = new ItemsMethods();
-        Items item = new Items();
 
         //Starts the VendingMachine.
         public void MachineGoGo()
@@ -24,13 +23,14 @@ namespace Automaten
                 Console.WriteLine("2. Buy Item");
                 Console.WriteLine("3. Add new item.");
                 Console.WriteLine("4. Quit.");
-                switch (Console.ReadLine())
+                string vendingMenu = Console.ReadLine();
+                switch (vendingMenu)
                 {
                     case "1":
                         ShowAllItemsMachine(itemsMethods);
                         break;
                     case "2":
-                        BuyItem(item);
+                        BuyItem(itemsMethods);
                         break;
                     case "3":
                         AddNewItemToMachine(itemsMethods);
@@ -49,6 +49,7 @@ namespace Automaten
             Console.Clear();
             Console.ReadKey();
         }
+
         private static void AddNewItemToMachine(ItemsMethods itemsMethods)
         {
             Console.Clear();
@@ -126,9 +127,8 @@ namespace Automaten
             itemsMethods.ShowAllItems();
             Console.ReadKey();
         }
-        private static Items BuyItem(Items item)
+        private static void BuyItem(ItemsMethods itemsMethods)
         {
-            ItemsMethods itemsMethods = new ItemsMethods();
             Console.Clear();
             itemsMethods.ShowAllItems();
             int id;
@@ -158,7 +158,6 @@ namespace Automaten
                 }
             }
             itemsMethods.BuyItem(id, moneyInserted);
-            return item;
         }
     }
 }

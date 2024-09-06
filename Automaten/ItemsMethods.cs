@@ -11,7 +11,6 @@ namespace Automaten
 {
     public class ItemsMethods
     {
-        VendingMachineException exception = new VendingMachineException();
         private readonly string jsonPath = @"C:\Users\nqvis\OneDrive\Skrivebord\Automaten\Automaten\items.json";
         private List<Items> _items;
         public ItemsMethods()
@@ -30,6 +29,7 @@ namespace Automaten
         }
         public List<Items> ShowAllItems()
         {
+            LoadItems();
             foreach (var item in _items)
             {
                 Console.WriteLine(item);
@@ -76,11 +76,7 @@ namespace Automaten
                 {
                     throw new VendingMachineException.InsufficientFundsException("Insufficient funds");
                 }
-                if(selectedItem.Quantity >= 1)
-                {
-                    //Does remove one from the quantity.
-                    selectedItem.Quantity--;
-                }
+                selectedItem.Quantity--;
                 double change = moneyInserted - selectedItem.Price;
                 Console.WriteLine($"Dispensing {selectedItem.Name}. Change: {change:F2}");
             }
@@ -96,6 +92,7 @@ namespace Automaten
             {
                 Console.WriteLine(ex.Message);
             }
+            SaveItems();
         }
         public bool ItemExists(int id)
         {
