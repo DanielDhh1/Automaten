@@ -4,11 +4,5 @@
     "Price": 9.95,
     "Name": "Pepsi Max",
     "Id": 1
-  },
-  {
-    "Quantity": 10,
-    "Price": 932.0,
-    "Name": "Squash",
-    "Id": 2
   }
 ]

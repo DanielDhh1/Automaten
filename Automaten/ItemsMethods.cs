@@ -76,7 +76,11 @@ namespace Automaten
                 {
                     throw new VendingMachineException.InsufficientFundsException("Insufficient funds");
                 }
-                selectedItem.Quantity--;
+                if(selectedItem.Quantity >= 1)
+                {
+                    //Does remove one from the quantity.
+                    selectedItem.Quantity--;
+                }
                 double change = moneyInserted - selectedItem.Price;
                 Console.WriteLine($"Dispensing {selectedItem.Name}. Change: {change:F2}");
             }

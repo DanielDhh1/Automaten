@@ -10,10 +10,12 @@ namespace Automaten
 {
     public class VendingMachine
     {
-        ItemsMethods itemsMethod = new ItemsMethods();
+        ItemsMethods itemsMethods = new ItemsMethods();
+        Items item = new Items();
+
+        //Starts the VendingMachine.
         public void MachineGoGo()
         {
-
             bool running = true;
             while (running)
             {
@@ -25,13 +27,13 @@ namespace Automaten
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        ShowAllItemsMachine(itemsMethod);
+                        ShowAllItemsMachine(itemsMethods);
                         break;
                     case "2":
-                        BuyItem(itemsMethod);
+                        BuyItem(item);
                         break;
                     case "3":
-                        AddNewItemToMachine(itemsMethod);
+                        AddNewItemToMachine(itemsMethods);
                         break;
                     case "4":
                         running = false;
@@ -47,7 +49,7 @@ namespace Automaten
             Console.Clear();
             Console.ReadKey();
         }
-        public static void AddNewItemToMachine(ItemsMethods itemsMethods)
+        private static void AddNewItemToMachine(ItemsMethods itemsMethods)
         {
             Console.Clear();
             int id;
@@ -118,14 +120,15 @@ namespace Automaten
             Console.WriteLine("New Item has been added.");
             Console.ReadKey();
         }
-        public static void ShowAllItemsMachine(ItemsMethods itemsMethods)
+        private static void ShowAllItemsMachine(ItemsMethods itemsMethods)
         {
             Console.Clear();
             itemsMethods.ShowAllItems();
             Console.ReadKey();
         }
-        public static void BuyItem(ItemsMethods itemsMethods)
+        private static Items BuyItem(Items item)
         {
+            ItemsMethods itemsMethods = new ItemsMethods();
             Console.Clear();
             itemsMethods.ShowAllItems();
             int id;
@@ -155,6 +158,7 @@ namespace Automaten
                 }
             }
             itemsMethods.BuyItem(id, moneyInserted);
+            return item;
         }
     }
 }
